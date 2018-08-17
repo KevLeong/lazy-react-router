@@ -10,7 +10,6 @@ const LazyRoute = ({ load, ...rest }) => (
   />
 );
 
-
 class LoadComponent extends React.Component {
   state = {
     Component: null,

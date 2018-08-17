@@ -9,7 +9,8 @@ ReactDOM.render(
       <Link to="/home">Home</Link>
       <Link to="/about">About</Link>
       <LazyRoute path="/home" load={() => import('./Home')} />
-      <LazyRoute path="/about" load={() => import('./About')}/>
+      <LazyRoute path="/about" load={() => import('./About')} />
+      <input type="text"/>23311
     </Fragment>
   </Router>,
   document.getElementById('App'),

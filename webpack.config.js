@@ -1,10 +1,15 @@
 const path = require('path');
 const DllReferencePlugin = require('webpack/lib/DllReferencePlugin');
+const webpack = require('webpack');
 module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve('dist'),
     filename: 'bundle.js',
+  },
+  devServer: {
+    contentBase: path.resolve(__dirname, 'dist'),
+    hot: true,
   },
   module: {
     rules: [
@@ -28,5 +33,6 @@ module.exports = {
     new DllReferencePlugin({
       manifest: require('./dist/react.manifest.json'),
     }),
+    new webpack.HotModuleReplacementPlugin(),
   ]
 }
